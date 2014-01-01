@@ -40,17 +40,25 @@ class PathAnimation extends Animation
              * Capital letters means absolutely positioned, lower cases means relatively positioned.
              */
             if (strlen($point) == 1) {
-                if (in_array($point, ['M', 'm'])) {
-                    $mode = $point;
+                if (in_array($point, ['M', 'm', 'L', 'l', 'H', 'h', 'V', 'v'])) {
+                    $mode = strtolower($point);
                 } else {
                     throw new \Exception(sprintf('SVG mode %s not yet supported', $point));
                 }
                 $mode_absolute = in_array($point, ['M', 'L', 'H', 'V', 'C', 'S', 'Q', 'T', 'A', 'Z']);
             } else {
                 $i++;
-                list($x, $y) = explode(',', $point);
-                $x = floatval($x) * $scale;
-                $y = floatval($y) * $scale;
+                if ($mode == 'm' || $mode == 'l') {
+                    list($x, $y) = explode(',', $point);
+                    $x = floatval($x) * $scale;
+                    $y = floatval($y) * $scale;
+                } else if ($mode == 'h') {
+                    $x = $point * $scale;
+                    $y = $prev_y;
+                } else if ($mode == 'v') {
+                    $x = $prev_x;
+                    $y = $point * $scale;
+                }
 
                 if ($i == 1) {
                     $duration = 0;
