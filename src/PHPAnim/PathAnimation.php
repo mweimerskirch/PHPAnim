@@ -65,7 +65,7 @@ class PathAnimation extends Animation
                 } else {
                     $distance_x = abs($prev_x - $x);
                     $distance_y = abs($prev_y - $y);
-                    $distance = $distance_x + $distance_y; //FIXME
+                    $distance = sqrt($distance_x^2 + $distance_y^2);
                     $duration = $distance / $speed;
                 }
 
