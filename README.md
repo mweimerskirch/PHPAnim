@@ -83,3 +83,17 @@ $selector->setCSS([
     'width' => '100px',
 ]);
 ```
+
+Instead of using CSS, you can also create animations using the "SimpleAnimation" class.
+
+```php
+$animation = new SimpleAnimation();
+$animation
+    ->hide()
+    ->moveTo(-100, -100)
+    ->rotateTo(90)
+    ->nextFrame(2.5)
+    ->show()
+    ->endFrame();
+$selector->addAnimation($animation);
+```
