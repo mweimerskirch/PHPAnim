@@ -1,0 +1,18 @@
+{
+    "name": "mw/php-anim",
+    "type": "library",
+    "description": "CSS3 animation tool for PHP",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michel Weimerskirch",
+            "email": "michel@weimerskirch.net",
+            "homepage": "http://michel.weimerskirch.net"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "PHPAnim\\": "src/"
+        }
+    }
+}
