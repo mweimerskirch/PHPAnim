@@ -107,7 +107,7 @@ class Animation
     /**
      * Set the delay for the the beginning of the animation sequence.
      *
-     * @param float $delay
+     * @param float $delay Delay in seconds
      * @return Animation
      */
     public function setDelay($delay)
@@ -118,9 +118,8 @@ class Animation
 
     /**
      * Set whether the animation should alternate its direction on each run through the sequence or reset to the start point and repeat itself.
-     * Example values: normal, reverse, alternate, alternate-reverse
      *
-     * @param string $direction
+     * @param string $direction Example values: normal, reverse, alternate, alternate-reverse
      * @return Animation
      */
     public function setDirection($direction)
@@ -131,9 +130,8 @@ class Animation
 
     /**
      * Set what values are applied to the animated objects before and after the animation is executing.
-     * Example values: none, forwards, backwards, both
      *
-     * @param string $fillMode
+     * @param string $fillMode Example values: none, forwards, backwards, both
      * @return Animation
      */
     public function setFillMode($fillMode)
@@ -144,9 +142,8 @@ class Animation
 
     /**
      * Set the number of times the animation should repeat.
-     * Example values: infinite, 1, 2, ...
      *
-     * @param string $iterationCount
+     * @param string $iterationCount Example values: infinite, 1, 2, ...
      * @return Animation
      */
     public function setIterationCount($iterationCount)
@@ -157,9 +154,8 @@ class Animation
 
     /**
      * Set the initial play state (e.g. "paused", so the animation sequence can be resumed dynamically).
-     * Example values: paused, running
      *
-     * @param string $playState
+     * @param string $playState Example values: paused, running
      * @return Animation
      */
     public function setPlayState($playState)
@@ -170,9 +166,8 @@ class Animation
 
     /**
      * Set the timing of the animation (i.e. how the animation transitions through keyframes)
-     * Example values: ease, ease-in, ease-out, ease-in-out, linear, step-start, step-end, steps(5, end), cubic-bezier(0.2, 0.9, 0.8, 0.1)
      *
-     * @param string $timingFunction
+     * @param string $timingFunction Example values: ease, ease-in, ease-out, ease-in-out, linear, step-start, step-end, steps(5, end), cubic-bezier(0.2, 0.9, 0.8, 0.1)
      * @return Animation
      */
     public function setTimingFunction($timingFunction)
